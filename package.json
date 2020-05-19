@@ -1,0 +1,21 @@
+{
+  "name": "hyde",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "next",
+    "prd": "next build && next start"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "gray-matter": "^4.0.2",
+    "js-yaml": "^3.13.1",
+    "marked": "^0.8.2",
+    "next": "^9.4.1",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1"
+  }
+}
