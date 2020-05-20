@@ -11,7 +11,7 @@ export default function Index( props ) {
                     props.posts.map(function(post, idx){
                         return (
                             <li key={idx}>
-                                <Link href={post.slug}>
+                                <Link href={'/posts/'+post.slug}>
                                     <a>{post.title}</a>
                                 </Link>
                             </li>)
