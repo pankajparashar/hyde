@@ -1,28 +1,27 @@
-import DefaultLayout from "../layouts/default"
-import Link from "next/link";
-import { config, getAllPosts } from "../api";
+import DefaultLayout from '../_layouts/default'
+import Link from 'next/link';
+import { config, getAllPosts } from '../api';
 
-export default function Index( props ) {
+export default function Blog(props){
     return (
-        <DefaultLayout title={ props.title } description={ props.description }>
-            <h1>List of posts</h1>
+        <DefaultLayout title={props.title} description={props.description}>
+            <h1>List of posts:</h1>
             <ul>
-                {
-                    props.posts.map(function(post, idx){
-                        return (
-                            <li key={idx}>
-                                <Link href={'/posts/'+post.slug}>
-                                    <a>{post.title}</a>
-                                </Link>
-                            </li>)
-                    })
-                }
+                {props.posts.map(function(post, idx){
+                    return (
+                        <li key={idx}>
+                            <Link href={'/posts/'+post.slug}>
+                                <a>{post.title}</a>
+                            </Link>
+                        </li>
+                    )
+                })}
             </ul>
         </DefaultLayout>
     )
 } 
 
-export async function getStaticProps(context){
+export async function getStaticProps(){
     return {
         props: {
             posts: getAllPosts(),

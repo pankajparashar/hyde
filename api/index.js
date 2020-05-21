@@ -1,17 +1,16 @@
-import fs from "fs";
-import path from "path";
+import fs from 'fs'
+import path from 'path'
 import matter from 'gray-matter'
 import marked from 'marked'
 import yaml from 'js-yaml'
 
 export function getAllPosts(){
-    const files = fs.readdirSync( 'posts' )
-    const posts = files.map( function(file){
-        const fileContent = fs.readFileSync( path.join( "posts", file ) )
-        const meta = matter( fileContent )
-
+    const files = fs.readdirSync('_posts')
+    const posts = files.map(function(file){
+        const content = fs.readFileSync(path.join('_posts',file))
+        const meta = matter(content)
         return {
-            slug: file.replace( ".md", "" ),
+            slug: file.replace('.md',''),
             title: meta.data.title
         }
     })
@@ -19,10 +18,10 @@ export function getAllPosts(){
 }
 
 export function getPostBySlug(slug){
-    const postContent = fs.readFileSync( path.join("posts", slug + ".md"), 'utf-8' )
-    const meta = matter(postContent)
+    const filePath = path.join('_posts', slug+'.md')
+    const fileContent = fs.readFileSync(filePath, 'utf-8' )
+    const meta = matter(fileContent)
     const content = marked(meta.content)    
-    
     return {
         title: meta.data.title, 
         content: content
