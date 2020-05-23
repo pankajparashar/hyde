@@ -4,15 +4,15 @@ import Footer from '../_includes/footer'
 
 export default function DefaultLayout(props){
     return (
-        <>
+        <main>
             <Head>
-                <meta name='viewport' content='width=device-width'/>
                 <title>{props.title}</title>
                 <meta name='description' content={props.description}/>
+                <link rel='stylesheet' href='/style.css'/>
             </Head>
             <Header/>
             {props.children}
             <Footer/>
-        </>
+        </main>
     )
 }

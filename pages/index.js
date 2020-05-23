@@ -5,7 +5,7 @@ import { config, getAllPosts } from '../api';
 export default function Blog(props){
     return (
         <DefaultLayout title={props.title} description={props.description}>
-            <h1>List of posts:</h1>
+            <p>List of posts:</p>
             <ul>
                 {props.posts.map(function(post, idx){
                     return (

@@ -9,11 +9,8 @@ export default function PostLayout(props){
                 <title>{props.title}</title>
             </Head>
             <article>
-                <h1>{props.title}</h1>
+                <h4><Link href='/'><a>Home</a></Link> | {props.title}</h4>
                 <div dangerouslySetInnerHTML={{__html:props.content}}/>
-                <Link href='/'>
-                    <a>Back to Home</a>
-                </Link>
             </article>
         </DefaultLayout>
     )

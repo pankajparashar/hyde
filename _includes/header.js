@@ -1,3 +1,3 @@
 export default function Header(){
-    return <header>Header</header>
+    return <header><p>Blog | Powered by Next.js</p></header>
 }
