@@ -1,6 +1,6 @@
 import Head from 'next/head'
-import Header from '../_includes/header'
-import Footer from '../_includes/footer'
+import Header from '@includes/header'
+import Footer from '@includes/footer'
 
 export default function DefaultLayout(props){
     return (

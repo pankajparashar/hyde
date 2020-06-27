@@ -1,6 +1,6 @@
-import DefaultLayout from '../_layouts/default'
-import Link from 'next/link';
-import { getConfig, getAllPosts } from '../api';
+import DefaultLayout from '@layouts/default'
+import Link from 'next/link'
+import { getConfig, getAllPosts } from '@api'
 
 export default function Blog(props){
     return (
