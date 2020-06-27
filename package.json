@@ -18,5 +18,8 @@
     "next": "^9.4.1",
     "react": "^16.13.1",
     "react-dom": "^16.13.1"
+  },
+  "devDependencies": {
+    "raw-loader": "^4.0.1"
   }
 }

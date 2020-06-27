@@ -7,12 +7,13 @@ export default function Post(props){
 
 export async function getStaticProps(context){
     return {
-        props: getPostBySlug(context.params.slug)
+        props: await getPostBySlug(context.params.slug)
     }
 }
 
 export async function getStaticPaths(){
-    const paths = getAllPosts().map(post => ({
+    let paths = await getAllPosts()
+    paths = paths.map(post => ({
         params: { slug:post.slug }
     }));
     return {

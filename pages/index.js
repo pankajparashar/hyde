@@ -1,6 +1,6 @@
 import DefaultLayout from '../_layouts/default'
 import Link from 'next/link';
-import { config, getAllPosts } from '../api';
+import { getConfig, getAllPosts } from '../api';
 
 export default function Blog(props){
     return (
@@ -22,9 +22,12 @@ export default function Blog(props){
 } 
 
 export async function getStaticProps(){
+    const config = await getConfig()
+    const allPosts = await getAllPosts()
+
     return {
         props: {
-            posts: getAllPosts(),
+            posts: allPosts,
             title: config.title,
             description: config.description
         }
