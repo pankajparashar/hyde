@@ -10,3 +10,14 @@ header {
 footer {
     border-top: 1px solid #ccc;
 }
+
+ul li ul {
+    list-style: none;
+    display: inline-block;
+    padding: 0;
+}
+
+ul li ul li {
+    display: inline-block;
+    margin-right: 5px;
+}
